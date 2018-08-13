@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Task</title>
+    </head>
+    <body>
+        <form  action='/task_completed/' method='POST'>
+    <fieldset>
+        <legend>Новая задача</legend>
+            <table>
+                <tr>
+                    <td><input type="text" name="name_task" placeholder="Название задачи"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="task_description" placeholder="Описание"></td>
+                </tr>
+                <tr>
+                    <td><label>Ответсвенный </label><input type="text" name="responsible_for_the_task" placeholder="Иванов Иван Иванович"></td>
+                </tr>
+                <tr>
+                    <td><label>Дата окончания </label><input type="date" name="task_end_date"></td>
+                </tr>
+            </table>
+        <input type="submit">
+    </fieldset>
+</form>
+</body>
+
+
+
+
+
+
+
+
