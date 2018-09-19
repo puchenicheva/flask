@@ -18,15 +18,16 @@
                 <td>Дата окончания задачи</td>
                 <td>Имя ответсвенного</td>
             </tr>
-
-            <!--<tr>-->
-                <!--<td>{{name_task}}</td>-->
-                <!--<td>{{task_description}}</td>-->
-                <!--<td>{{responsible_for_the_task}}</td>-->
-                <!--<td>{{task_end_date}}</td>-->
-            <!--</tr>-->
+            {% for task in tasks%}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.description}}</td>
+                <td>{{i.responsible}}</td>
+                <td>{{i.date}}</td>
+            </tr>
+            {% endfor %}
         </table>
-        <form action="http://0.0.0.0:5000/task_completed/">
+        <form action="task.html">
             <button>break into</button>
         </form>
 </body>
