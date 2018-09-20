@@ -20,10 +20,10 @@
             </tr>
             {% for task in tasks%}
             <tr>
-                <td>{{i.name}}</td>
-                <td>{{i.description}}</td>
-                <td>{{i.responsible}}</td>
-                <td>{{i.date}}</td>
+                <td>{{task.name}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.responsible}}</td>
+                <td>{{task.date}}</td>
             </tr>
             {% endfor %}
         </table>

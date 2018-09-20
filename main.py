@@ -40,7 +40,7 @@ def task_post():
                            task_end_date=task_end_date)
 
 
-@app.route('/task_completed/', methods=['GET'])
+@app.route('/task_completed/', methods=['GET', 'POST'])
 def task_get():
     get_task = Task.db.get()
     return render_template('task_completed.html',

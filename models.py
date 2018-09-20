@@ -19,10 +19,12 @@ class Task(Base):
         self.responsible = responsible
         self.date = date
 
-    def db_addition(self, note):
+    @staticmethod
+    def db_addition(note):
         session.commit()
         session.close()
         session.add(note)
 
-    def db_get(self):
+    @staticmethod
+    def db_get():
         return Task.query.all()
