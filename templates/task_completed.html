@@ -12,12 +12,15 @@
 
 
         <table>
+            <tr>Task list</tr>
+
             <tr>
                 <td>Название задачи</td>
                 <td>Описание задачи</td>
-                <td>Дата окончания задачи</td>
                 <td>Имя ответсвенного</td>
+                <td>Дата окончания задачи</td>
             </tr>
+
             {% for task in tasks%}
             <tr>
                 <td>{{task.name}}</td>
@@ -26,9 +29,7 @@
                 <td>{{task.date}}</td>
             </tr>
             {% endfor %}
+
         </table>
-        <form action="task.html">
-            <button>break into</button>
-        </form>
 </body>
 </html>

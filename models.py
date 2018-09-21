@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Integer, Date
-from base import Base, Session
+from base import Session, Base
 
 session = Session()
 
@@ -13,18 +13,25 @@ class Task(Base):
     responsible = Column(String())
     date = Column(Date())
 
-    def __init__(self, name=None, description=None, responsible=None, date=None):
+    def __init__(self, name, description, responsible, date):
         self.name = name
         self.description = description
         self.responsible = responsible
         self.date = date
 
+    def __repr__(self):
+        return '<Task %r>' % self.name
+
     @staticmethod
     def db_addition(note):
+        session.add(note)
         session.commit()
         session.close()
-        session.add(note)
 
     @staticmethod
     def db_get():
-        return Task.query.all()
+        return session.query(Task,
+                            Task.name,
+                            Task.description,
+                            Task.responsible,
+                            Task.date).all()
