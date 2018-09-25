@@ -7,7 +7,29 @@
 <body>
         <p>Название задачи:{{name_task}}</p>
         <p>Описание задачи:{{task_description}}</p>
-        <p>Дата окончания задачи:{{responsible_for_the_task}}</p>
-        <p>Имя ответсвенного:{{task_end_date}}</p>
+        <p>Имя ответсвенного:{{responsible_for_the_task}}</p>
+        <p>Дата окончания задачи:{{task_end_date}}</p>
+
+
+        <table>
+            <tr>Task list</tr>
+
+            <tr>
+                <td>Название задачи</td>
+                <td>Описание задачи</td>
+                <td>Имя ответсвенного</td>
+                <td>Дата окончания задачи</td>
+            </tr>
+
+            {% for task in tasks%}
+            <tr>
+                <td>{{task.name}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.responsible}}</td>
+                <td>{{task.date}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
 </body>
 </html>
